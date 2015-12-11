@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Node Angular Mysql</title>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script src="http://localhost/node-mysql/js/angular.min.js"></script>
+      <script src="http://localhost/node-mysql/controller.js"></script>
+     
+   </head>
+  
+   <body ng-app="nodeModule" ng-controller="nodeusersController" ng-init="getUsers()">
+      <header>
+      <h2 class="text-center"> – Node Js Application – </h2>
+      </header>  
+      <div class="container">
+      
+         <div class="col-xs-12">
+              
+              <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                     <tr>
+                        <th width="5%">#</th>
+                        <th width="25%">Name</th>
+                        <th width="20%">Department</th>
+                        <th width="15%">Batch</th>
+                        <th width="15%">Salary</th>
+                        <th width="20%">Action</th>
+                     </tr>
+                  </thead>
+                  
+                  <tbody>
+                     <tr class="scope" ng-repeat="user in users">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.dept }}</td>
+                        <td>{{ user.batch }}</td>
+                        <td>{{ user.salary }}</td>
+                        <td><span data-ng-click="editUser(user)"> Edit</span>|<span data-ng-click="deleteUser(user)">Delete</span></td>
+                     </tr>
+                  </tbody>
+               </table>
+         </div>
+      </div>
+   </body>
+</html>
